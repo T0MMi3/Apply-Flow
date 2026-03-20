@@ -3,16 +3,15 @@ import StatusBadge from "@/components/StatusBadge";
 import { applications } from "@/lib/data";
 
 type ApplicationDetailPageProps = {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 };
 
-export default async function ApplicationDetailPage({
+export default function ApplicationDetailPage({
   params,
 }: ApplicationDetailPageProps) {
-  const { id } = await params;
-  const application = applications.find((app) => app.id === Number(id));
+  const application = applications.find((app) => app.id === Number(params.id));
 
   if (!application) {
     notFound();
@@ -23,7 +22,7 @@ export default async function ApplicationDetailPage({
       <div className="rounded-2xl border bg-white p-8 shadow-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">{application.company}</h1>
+            <h1 className="text-3xl font-bold">{application.company}</h1>
             <p className="mt-2 text-lg text-gray-600">{application.role}</p>
           </div>
 
