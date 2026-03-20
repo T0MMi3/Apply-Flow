@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ApplyFlow
 
-## Getting Started
+ApplyFlow is a job application tracking dashboard built with Next.js, TypeScript, and Tailwind CSS. It helps users organize job applications, track statuses, search and filter roles, sort results, and manage applications through a simple dashboard interface.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Add new job applications through a form
+- Delete applications from the dashboard
+- Filter applications by status
+- Search by company, role, or location
+- Sort by date, company, or status
+- Dynamic application detail pages
+- Data persistence using localStorage
+- Initial sample data loaded through a Next.js API route
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```text
+app/
+  api/applications/route.ts
+  applications/
+    [id]/page.tsx
+    page.tsx
+  layout.tsx
+  page.tsx
 
-To learn more about Next.js, take a look at the following resources:
+components/
+  ApplicationTable.tsx
+  Navbar.tsx
+  StatCard.tsx
+  StatusBadge.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+lib/
+  data.ts
+  types.ts
